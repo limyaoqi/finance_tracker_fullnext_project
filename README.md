@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Personal Finance Tracker
 
-## Getting Started
+Personal Finance Tracker is a web application built with Next.js that allows users to track their expenses and manage their personal finances. Users can categorize expenses, record income, and visualize their financial data through charts and reports.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- User authentication
+- Expense tracking and categorization
+- Income recording
+- Financial reports with charts
+- MongoDB integration for data storage
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Prerequisites
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Before you begin, ensure you have met the following requirements:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Node.js (v14 or later)
+- npm or yarn
+- MongoDB instance (local or cloud-based)
+- Next.js knowledge
 
-## Learn More
+## Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```
+   git clone https://github.com/yourusername/personal-finance-tracker.git
+   cd personal-finance-tracker
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. Install the dependencies:
 
-## Deploy on Vercel
+   ```
+   npm install
+   # or
+   yarn install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Set up environment variables:
+   Create a `.env.local` file in the root directory and add the following variables:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```
+   MONGODB_URI=your_mongodb_connection_string
+   NEXTAUTH_SECRET=your_nextauth_secret
+   NEXTAUTH_URL=http://localhost:3000
+   ```
+
+   Replace `your_mongodb_connection_string` with your actual MongoDB connection string and `your_nextauth_secret` with a secure random string.
+
+## Running the Application
+
+1. Start the development server:
+
+   ```
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+2. Open your browser and navigate to `http://localhost:3000`.
+
+## Project Structure
+
+The project consists of three main pages:
+
+1. Expenses (`/pages/expenses.js`)
+2. Income (`/pages/income.js`)
+3. Reports (`/pages/reports.js`)
+
+## Models
+
+The application uses the following MongoDB models:
+
+- User
+- Expense
+- Income
+- Category
+
+## API Routes
+
+API routes are located in the `/pages/api` directory and handle CRUD operations for expenses and income.
+
+## Authentication
+
+This project uses NextAuth.js for user authentication. Ensure you have set up the necessary providers in `/pages/api/auth/[...nextauth].js`.
+
+## Contributing
+
+Contributions to the Personal Finance Tracker are welcome. Please feel free to submit a Pull Request.
+
+## License
+
+[Add your chosen license here]
+
+## Contact
+
+If you have any questions or feedback, please contact [Your Name] at [your.email@example.com].
